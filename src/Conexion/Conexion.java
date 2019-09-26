@@ -13,7 +13,7 @@ Statement st = null;
     public Conexion(){
         try 
             {
-                String rutafile = "C:\\aplicacion_imprecion\\Curso2.accdb";
+                String rutafile = System.getProperty("user.dir")+"/Curso2.accdb";
                 String Url = "jdbc:ucanaccess://" + rutafile;
                 ccn = DriverManager.getConnection(Url);
                 st = ccn.createStatement();
