@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" columnCount="2" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="390" columnSpacing="12" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.331000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="direccion" class="java.lang.String"/>
+	<parameter name="tel" class="java.lang.String"/>
+	<parameter name="nit" class="java.lang.String"/>
+	<parameter name="cliente" class="java.lang.String"/>
+	<parameter name="ID" class="java.lang.String"/>
+	<parameter name="equipo" class="java.lang.String"/>
+	<parameter name="marca" class="java.lang.String"/>
+	<parameter name="modelo" class="java.lang.String"/>
+	<parameter name="serial" class="java.lang.String"/>
+	<parameter name="accesorios" class="java.lang.String"/>
+	<parameter name="manifestacion" class="java.lang.String"/>
+	<parameter name="manifestacion2" class="java.lang.String"/>
+	<parameter name="observaciones" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="611" splitType="Stretch">
+			<staticText>
+				<reportElement x="51" y="24" width="83" height="23"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electrónico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="10" width="83" height="14"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio Técnico]]></text>
+			</staticText>
+			<image>
+				<reportElement x="134" y="10" width="58" height="70"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\aplicacion_imprecion\\src\\imagenes\\1.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="278" y="12" width="36" height="36"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\aplicacion_imprecion\\src\\imagenes\\4.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="206" y="11" width="36" height="36"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\aplicacion_imprecion\\src\\imagenes\\2.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="242" y="12" width="36" height="36"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\aplicacion_imprecion\\src\\imagenes\\3.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="314" y="12" width="36" height="36"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\aplicacion_imprecion\\src\\imagenes\\5.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="108" y="60" width="170" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reparamos todas las marcas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="80" width="180" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<text><![CDATA[Nit. 91.471.607 - 1 / RÉGIMEN SIMPLIFICADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="111" width="191" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<text><![CDATA[e - mail: electronicanelsonremolina@hotmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="128" width="191" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<text><![CDATA[Calle 13 No. 7 - 04 esquina - Centro Santa Marta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="98" width="304" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="10"/>
+				</textElement>
+				<text><![CDATA[Nelson Remolina/ Teléfono: 421 17 39 Cel: 300 523 0518 - 310 626 3530]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="145" width="142" height="22"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ORDEN DE TRABAJO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="186" width="57" height="23"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="12" y="209" width="78" height="22"/>
+			</rectangle>
+			<line>
+				<reportElement x="35" y="209" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="65" y="209" width="1" height="22"/>
+			</line>
+			<staticText>
+				<reportElement x="201" y="268" width="28" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Modelo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="192" y="253" width="192" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{direccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="242" width="26" height="11"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Cliente: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="242" width="151" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="268" width="23" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Marca:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="268" width="26" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Equipo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="253" width="20" height="13"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Nit:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="278" width="75" height="11"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Accesorios Recibidos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="268" width="23" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Serial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="310" width="93" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Observaciones del técnico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="253" width="37" height="13"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="242" width="14" height="11"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="206" y="242" width="178" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="253" width="119" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{nit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="289" width="65" height="11"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<text><![CDATA[El cliente manifiesta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="268" width="80" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{equipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="268" width="62" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="268" width="49" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="268" width="83" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{serial}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="306" y="209" width="78" height="22"/>
+			</rectangle>
+			<textField>
+				<reportElement x="314" y="211" width="58" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="278" width="294" height="11"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{accesorios}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="289" width="304" height="11"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{manifestacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="300" width="369" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{manifestacion2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="310" width="276" height="10"/>
+				<textElement>
+					<font fontName="Arial Narrow" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{observaciones}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
