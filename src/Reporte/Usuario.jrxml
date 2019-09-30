@@ -54,7 +54,7 @@
 			</staticText>
 			<staticText>
 				<reportElement x="157" y="249" width="47" height="15"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Arial Narrow" size="10"/>
 				</textElement>
 				<text><![CDATA[Dirección:]]></text>

@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -17,9 +18,10 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
 
 public class Imprimir {
-    String ID,cliente,tel,nit,direccion,equipo,marca,modelo,sarial,accesorios,falla,obsrvacion,tecnico,fechaEnt;
+    String ID,cliente,tel,nit,direccion,equipo,marca,modelo,sarial,accesorios,falla,obsrvacion,tecnico,fechaEnt,fechaRep;
     Integer costoRev,costoDom,total;
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/YYYY");
+    DecimalFormat formato = new DecimalFormat("###,###.##");
     
     public void Imprimir() throws SQLException{
         
@@ -58,6 +60,11 @@ public class Imprimir {
             parametros.put("D",format.format(new Date()).substring(0,2));
             parametros.put("M",format.format(new Date()).substring(3,5));
             parametros.put("A",format.format(new Date()).substring(6));
+            parametros.put("costoRev",formato.format(costoRev));
+            parametros.put("costoDom",formato.format(costoDom));
+            parametros.put("total",formato.format(total));
+            parametros.put("fechaRep", fechaRep);
+            parametros.put("fechaEnt",fechaEnt);
             
             //parametros.put("equipo",jTextField7.getText());
             //parametros.put("equipo",jTextField7.getText());
@@ -94,6 +101,9 @@ public class Imprimir {
                 this.costoRev = rs.getInt("costo_revision");
                 this.costoDom = rs.getInt("costo_domicilio");
                 this.total = rs.getInt("total_pagar");
+                this.tecnico = rs.getString("tecnico_cargo");
+                this.fechaEnt = rs.getString("fecha_entrega");
+                this.fechaRep = rs.getString("fecha_reparacion");
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "NO HAY DATOS", "Advertencia", JOptionPane.WARNING_MESSAGE);

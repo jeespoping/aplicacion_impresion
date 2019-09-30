@@ -286,7 +286,6 @@ public class Interfaz extends javax.swing.JFrame {
         } catch (PropertyVetoException ex) {
         Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
         }
-        R.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
