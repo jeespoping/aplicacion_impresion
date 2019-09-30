@@ -305,7 +305,11 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-
+        Buscar b = new Buscar();
+        jDesktopPane1.add(b);
+        b.setVisible(true);
+        b.toFront();
+        b.setLocation(jDesktopPane1.getWidth() / 2 - b.getWidth() / 2, jDesktopPane1.getHeight() / 2 - b.getHeight() / 2);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

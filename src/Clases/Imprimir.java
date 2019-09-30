@@ -25,7 +25,7 @@ public class Imprimir {
     
     public void Imprimir() throws SQLException{
         
-        datos();
+        
         try {
             String master = System.getProperty("user.dir")+"/src/Reporte/Usuario.Jasper";
             HashMap parametros = new HashMap();
@@ -107,6 +107,46 @@ public class Imprimir {
             }
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "NO HAY DATOS", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+    public void buscarDatos(String id) throws SQLException{
+        Boolean flag = false;
+        try {
+            Connection con = null;
+            Conexion conect = new Conexion();
+            con = conect.getConnection();
+            String sql = "select * from Registro";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                if(id.equalsIgnoreCase(rs.getString("Id_registro"))){
+                    this.ID = rs.getString("Id_registro");
+                    this.cliente = rs.getString("cliente");
+                    this.tel = rs.getString("telefono");
+                    this.nit = rs.getString("nit");
+                    this.direccion = rs.getString("direccion");
+                    this.equipo = rs.getString("equipo");
+                    this.marca = rs.getString("marca");
+                    this.modelo = rs.getString("modelo");
+                    this.sarial = rs.getString("serial");
+                    this.accesorios = rs.getString("accesorios_recibidos");
+                    this.falla = rs.getString("manifestacion_cliente");
+                    this.obsrvacion = rs.getNString("tecnico_cargo");
+                    this.costoRev = rs.getInt("costo_revision");
+                    this.costoDom = rs.getInt("costo_domicilio");
+                    this.total = rs.getInt("total_pagar");
+                    this.tecnico = rs.getString("tecnico_cargo");
+                    this.fechaEnt = rs.getString("fecha_entrega");
+                    this.fechaRep = rs.getString("fecha_reparacion");
+                    Imprimir();
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag == false) JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }
 }
