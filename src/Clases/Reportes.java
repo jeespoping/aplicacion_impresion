@@ -1,28 +1,30 @@
 package Clases;
 
 import Conexion.Conexion;
-import com.placeholder.PlaceHolder;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.HeadlessException;
-import java.awt.event.MouseMotionListener;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.plaf.basic.BasicInternalFrameUI;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
 
 public class Reportes extends javax.swing.JInternalFrame {
+    
+    Imprimir impr = new Imprimir();
+    
     public Reportes() {
         initComponents();
         this.getContentPane().setBackground(new Color(236, 240, 241));
@@ -465,6 +467,12 @@ public class Reportes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField14ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        
+        java.util.Date fecha1 = jDateChooser1.getDate();
+        java.util.Date fecha2 = jDateChooser2.getDate();
+        SimpleDateFormat f = new SimpleDateFormat("dd/MM/YYYY");
+        
         if (jTextField1.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "FALTA INGRESAR EL CLIENTE", "Advertencia", JOptionPane.WARNING_MESSAGE);
@@ -515,11 +523,38 @@ public class Reportes extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "FALTA INGRESAR LA MANIFESTACION DEL CLIENTE", "Advertencia", JOptionPane.WARNING_MESSAGE);
             jTextField10.requestFocus();
         }
-        else if (jTextField1.getText().isEmpty())
+        else if (jTextField11.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this, "FALTA INGRESAR LAS OBSERVACIONES DEL TECNICO", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            jTextField1.requestFocus();
+            jTextField11.requestFocus();
         }
+        
+        else if(jTextField12.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this,"FALTA INGRESAR EL TECNICO A CARGO", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            jTextField12.requestFocus();
+        }
+        
+        else if(jTextField13.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "FALTA INGRESAR EL COSTO DE REPARACION", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            jTextField13.requestFocus();
+        }
+        
+        else if(jTextField14.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "FALTA INGRESAR EL COSTO DE DOMICILIO", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            jTextField14.requestFocus();
+        }
+        
+        else if(jLabel19.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "PRECIONE EL BOTON VALOR", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        else if(fecha1 == null){
+            JOptionPane.showMessageDialog(this, "INGRESE LA FECHA DE REPARACION","Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+        else if(fecha2 == null){
+            JOptionPane.showMessageDialog(this, "INGRESE LA FECHA DE ENTREGA","Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+        
         else
         {
             int total = 0;
@@ -529,7 +564,7 @@ public class Reportes extends javax.swing.JInternalFrame {
                 Conexion conect = new Conexion();
                 con = conect.getConnection();
                 Statement st = con.createStatement();
-                String sql = "insert into Registro (cliente,telefono,nit,direccion,equipo,marca,modelo,serial,accesorios_recibidos,manifestacion_cliente,tecnico_cargo,costo_revision,costo_domicilio,total_pagar,fecha_reparacion,fecha_entrega,fecha) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                String sql = "insert into Registro (cliente,telefono,nit,direccion,equipo,marca,modelo,serial,accesorios_recibidos,manifestacion_cliente,tecnico_cargo,costo_revision,costo_domicilio,total_pagar,fecha_reparacion,fecha_entrega) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, jTextField1.getText());
                 pst.setString(2, jTextField2.getText());
@@ -550,12 +585,8 @@ public class Reportes extends javax.swing.JInternalFrame {
                 total = numero1 + numero2;
                 pst.setString(14, Integer.toString(total));
                 }
-                java.util.Date fecha1 = jDateChooser1.getDate();
-                java.util.Date fecha2 = jDateChooser2.getDate();
-                DateFormat f = new SimpleDateFormat("dd-mm-yyyy");
                 pst.setString(15, f.format(fecha1));
                 pst.setString(16, f.format(fecha2)); 
-                pst.setString(17, f.format(fecha1));
                 
                 int n = pst.executeUpdate();
                 if (n > 0)
@@ -563,6 +594,18 @@ public class Reportes extends javax.swing.JInternalFrame {
                     JOptionPane.showMessageDialog(this, "DATOS GUARDADOS CORRECTAMENTE");
                     limpiar();
                 }
+                
+                
+                //Desea imprimir
+                int reply = JOptionPane.showConfirmDialog(null, "DESEA IMPRIMIR", "ESPERA", JOptionPane.YES_NO_OPTION);
+                if(reply == JOptionPane.YES_OPTION){
+                    try {
+                        impr.Imprimir();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Reportes.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
             } catch (SQLException | HeadlessException e)
             {
                 JOptionPane.showMessageDialog(this, "LOS DATOS NO HAN SIDO GUARDADOS CORRECTAMENTE", "Error", JOptionPane.ERROR_MESSAGE);
@@ -606,43 +649,9 @@ public class Reportes extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            String master = System.getProperty("user.dir")+"/src/Reporte/Usuario.Jasper";
-            HashMap parametros = new HashMap();
-            
-            parametros.put("ID","1");
-            parametros.put("cliente",jTextField1.getText());
-            parametros.put("tel",jTextField2.getText());
-            parametros.put("nit",jTextField3.getText());
-            parametros.put("direccion",jTextField4.getText());
-            parametros.put("equipo",jTextField7.getText());
-            parametros.put("marca",jTextField6.getText());
-            parametros.put("modelo",jTextField8.getText());
-            parametros.put("sarial",jTextField9.getText());
-            parametros.put("accesorios",jTextField5.getText());
-            if(jTextField10.getText().length() > 72){
-                parametros.put("falla",jTextField10.getText().substring(0, 72));
-                parametros.put("falla2",jTextField10.getText().substring(73));
-            }
-            else {
-                parametros.put("falla",jTextField10.getText());
-                parametros.put("falla2","");
-            }
-            if(jTextField11.getText().length() > 56){
-                parametros.put("observacion",jTextField11.getText().substring(0, 56));
-                parametros.put("observacion2",jTextField11.getText().substring(57));
-            }
-            else {
-                parametros.put("observacion",jTextField11.getText());
-                parametros.put("observacion2","");
-            }
-            //parametros.put("equipo",jTextField7.getText());
-            //parametros.put("equipo",jTextField7.getText());
-            
-            
-            JasperPrint informe = JasperFillManager.fillReport(master, parametros, new JREmptyDataSource());
-            JasperViewer.viewReport(informe,false);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error"+e.getMessage().toString());
+            impr.Imprimir();
+        } catch (SQLException ex) {
+            Logger.getLogger(Reportes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -673,8 +682,8 @@ public class Reportes extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    public static com.toedter.calendar.JDateChooser jDateChooser1;
+    public static com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -685,7 +694,7 @@ public class Reportes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
+    public static javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -694,19 +703,19 @@ public class Reportes extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    public static javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField10;
+    public static javax.swing.JTextField jTextField11;
+    public static javax.swing.JTextField jTextField12;
+    public static javax.swing.JTextField jTextField13;
+    public static javax.swing.JTextField jTextField14;
+    public static javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField jTextField3;
+    public static javax.swing.JTextField jTextField4;
+    public static javax.swing.JTextField jTextField5;
+    public static javax.swing.JTextField jTextField6;
+    public static javax.swing.JTextField jTextField7;
+    public static javax.swing.JTextField jTextField8;
+    public static javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

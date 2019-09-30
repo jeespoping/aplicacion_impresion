@@ -17,6 +17,15 @@
 	<parameter name="falla2" class="java.lang.String"/>
 	<parameter name="observacion" class="java.lang.String"/>
 	<parameter name="observacion2" class="java.lang.String"/>
+	<parameter name="tecnico" class="java.lang.String"/>
+	<parameter name="costoRev" class="java.lang.String"/>
+	<parameter name="costoDom" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="fechaRep" class="java.lang.String"/>
+	<parameter name="fechaEnt" class="java.lang.String"/>
+	<parameter name="D" class="java.lang.String"/>
+	<parameter name="M" class="java.lang.String"/>
+	<parameter name="A" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -837,6 +846,132 @@ Le informa que, a partir de la fecha de aviso al cliente por medio verificable, 
 				</textElement>
 				<text><![CDATA[NOTA: EN CASO DE RECLAMO FAVOR PRESENTAR ESTE RECIBO TENIENDO EN CUENTA LAS CONDICIONES ANTERIORES.]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="174" y="348" width="213" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="568" y="349" width="213" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{tecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="373" width="207" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{costoRev}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="575" y="372" width="207" height="17"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{costoRev}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="390" width="207" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{costoDom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="574" y="391" width="207" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{costoDom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="409" width="207" height="17" forecolor="#FF0033"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="575" y="407" width="206" height="17" forecolor="#FF0033"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial Narrow" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="427" width="213" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{fechaRep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="426" width="213" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{fechaRep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="442" width="213" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{fechaEnt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="568" y="445" width="213" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{fechaEnt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="181" width="40" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{D}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="181" width="57" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{M}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="181" width="40" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="181" width="40" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{D}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="181" width="40" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{A}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="452" y="181" width="57" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Narrow"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{M}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<pageFooter>
