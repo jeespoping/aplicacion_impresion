@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,14 @@ public class Buscar extends javax.swing.JInternalFrame {
         cursor();
         this.getContentPane().setBackground(new Color(127, 140, 141));
         PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el Id");
+    }
+    
+    private void capturarEnter(KeyEvent evt){
+        char cTeclaPresionada = evt.getKeyChar();
+        
+        if(cTeclaPresionada == KeyEvent.VK_ENTER){
+            jButton1.doClick();
+        }
     }
     
      public void limpiar(){
@@ -54,6 +63,11 @@ public class Buscar extends javax.swing.JInternalFrame {
 
         jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/busqueda.png"))); // NOI18N
@@ -118,6 +132,10 @@ public class Buscar extends javax.swing.JInternalFrame {
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
         cursor();
     }//GEN-LAST:event_jButton1MouseExited
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        capturarEnter(evt);
+    }//GEN-LAST:event_jTextField1KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

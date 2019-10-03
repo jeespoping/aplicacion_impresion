@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -27,7 +28,7 @@ import javax.swing.JOptionPane;
 public class Borrar extends javax.swing.JInternalFrame {
     Imprimir impr = new Imprimir();
     Cursor cursor;
-    private String id;
+    boolean flag = true;
     Toolkit t = Toolkit.getDefaultToolkit();
     public Borrar() {
         initComponents();
@@ -35,6 +36,23 @@ public class Borrar extends javax.swing.JInternalFrame {
         this.getContentPane().setBackground(new Color(192, 57, 43));
         PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el Id");
     }
+    
+    private void capturarEnter(KeyEvent evt){
+        char cTeclaPresionada = evt.getKeyChar();
+        
+        if(cTeclaPresionada == KeyEvent.VK_ENTER){
+            jButton1.doClick();
+        }
+    }
+    
+     private void capturarEnter2(KeyEvent evt){
+        char cTeclaPresionada = evt.getKeyChar();
+        
+        if (cTeclaPresionada == KeyEvent.VK_ENTER){
+           flag = false;
+        }
+    }
+    
     public void limpiar(){
         jTextField1.setText("");
         PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el Id");
@@ -64,12 +82,22 @@ public class Borrar extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
 
         setClosable(true);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jLabel1.setText("Ingrese el Id de la factura para Borrar");
 
         jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/goma-de-borrar.png"))); // NOI18N
@@ -135,7 +163,7 @@ public class Borrar extends javax.swing.JInternalFrame {
                 {
                     JOptionPane.showMessageDialog(this, "DATOS NO ELIMINADOS CORRECTAMENTE" + ex.getMessage());
                 }
-            }
+                }
                 borrando(jTextField1.getText());
             }
             else{
@@ -145,6 +173,14 @@ public class Borrar extends javax.swing.JInternalFrame {
             Logger.getLogger(Buscar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        capturarEnter(evt);
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        capturarEnter2(evt);
+    }//GEN-LAST:event_formKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

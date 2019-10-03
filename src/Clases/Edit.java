@@ -619,7 +619,7 @@ public class Edit extends javax.swing.JInternalFrame {
                 int reply = JOptionPane.showConfirmDialog(null, "DESEA IMPRIMIR", "ESPERA", JOptionPane.YES_NO_OPTION);
                 if(reply == JOptionPane.YES_OPTION){
                     try {
-                        impr.datos();
+                        impr.buscarDatos(id);
                         impr.Imprimir();
                     } catch (SQLException ex) {
                         Logger.getLogger(Reportes.class.getName()).log(Level.SEVERE, null, ex);
