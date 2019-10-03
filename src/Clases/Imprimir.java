@@ -97,7 +97,7 @@ public class Imprimir {
                 this.sarial = rs.getString("serial");
                 this.accesorios = rs.getString("accesorios_recibidos");
                 this.falla = rs.getString("manifestacion_cliente");
-                this.obsrvacion = rs.getNString("tecnico_cargo");
+                this.obsrvacion = rs.getNString("manifestacion_tecnico");
                 this.costoRev = rs.getInt("costo_revision");
                 this.costoDom = rs.getInt("costo_domicilio");
                 this.total = rs.getInt("total_pagar");
@@ -110,7 +110,7 @@ public class Imprimir {
         }
     }
     
-    public void buscarDatos(String id) throws SQLException{
+    public boolean buscarDatos(String id) throws SQLException{
         Boolean flag = false;
         try {
             Connection con = null;
@@ -132,21 +132,22 @@ public class Imprimir {
                     this.sarial = rs.getString("serial");
                     this.accesorios = rs.getString("accesorios_recibidos");
                     this.falla = rs.getString("manifestacion_cliente");
-                    this.obsrvacion = rs.getNString("tecnico_cargo");
+                    this.obsrvacion = rs.getNString("manifestacion_tecnico");
                     this.costoRev = rs.getInt("costo_revision");
                     this.costoDom = rs.getInt("costo_domicilio");
                     this.total = rs.getInt("total_pagar");
                     this.tecnico = rs.getString("tecnico_cargo");
                     this.fechaEnt = rs.getString("fecha_entrega");
                     this.fechaRep = rs.getString("fecha_reparacion");
-                    Imprimir();
-                    flag = true;
-                    break;
+                    return true;
                 }
             }
-            if(flag == false) JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            if(flag == false){
+                JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
+        return false;
     }
 }

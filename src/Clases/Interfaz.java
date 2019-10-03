@@ -59,6 +59,15 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane(){
             private Image image;
             {
@@ -101,12 +110,32 @@ public class Interfaz extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+
+        jMenuItem5.setText("jMenuItem5");
+
+        jMenuItem7.setText("jMenuItem7");
+
+        jMenu3.setText("jMenu3");
+
+        jMenu4.setText("File");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("File");
+        jMenuBar3.add(jMenu6);
+
+        jMenu7.setText("Edit");
+        jMenuBar3.add(jMenu7);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -114,6 +143,8 @@ public class Interfaz extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+
+        jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel6.setFont(new java.awt.Font("Decker", 1, 25)); // NOI18N
         jLabel6.setText(":");
@@ -150,7 +181,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JLB_Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 367, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtHora1)
@@ -162,7 +193,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSegundos1)
-                .addContainerGap())
+                .addGap(22, 22, 22))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,47 +246,65 @@ public class Interfaz extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/avion-de-papel.png"))); // NOI18N
-        jMenu2.setText("OPCIONES");
-        jMenu2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/AGREGAR.png"))); // NOI18N
+        jMenu8.setText("AGREGAR");
+        jMenu8.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
-        jMenuItem3.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/libro.png"))); // NOI18N
-        jMenuItem3.setText("AGREGAR");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem8.setText("Agregar Orden");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuItem8ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        jMenu8.add(jMenuItem8);
 
-        jMenuItem4.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lupa.png"))); // NOI18N
-        jMenuItem4.setText("BUSCAR");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        jMenuBar1.add(jMenu8);
+
+        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/buscar.png"))); // NOI18N
+        jMenu9.setText("BUSCAR");
+        jMenu9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem9.setText("Buscar Orden");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                jMenuItem9ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        jMenu9.add(jMenuItem9);
 
-        jMenuItem6.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
-        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/basura.png"))); // NOI18N
-        jMenuItem6.setText("BORRAR");
-        jMenu2.add(jMenuItem6);
+        jMenuBar1.add(jMenu9);
 
-        jMenuBar1.add(jMenu2);
+        jMenu10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/editar.png"))); // NOI18N
+        jMenu10.setText("EDITAR");
+        jMenu10.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/avatar.png"))); // NOI18N
-        jMenu3.setText("AYUDA");
-        jMenu3.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setText("Editar Orden");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem10);
 
-        jMenuItem5.setFont(new java.awt.Font("Ebrima", 1, 12)); // NOI18N
-        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lentes.png"))); // NOI18N
-        jMenuItem5.setText("HELP");
-        jMenu3.add(jMenuItem5);
+        jMenuBar1.add(jMenu10);
 
-        jMenuBar1.add(jMenu3);
+        jMenu11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/borrar.png"))); // NOI18N
+        jMenu11.setText("BORRAR");
+        jMenu11.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+
+        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem11.setText("Borrar Orden");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(jMenuItem11);
+
+        jMenuBar1.add(jMenu11);
 
         setJMenuBar(jMenuBar1);
 
@@ -273,21 +322,6 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Reportes R = new Reportes();
-        jDesktopPane1.add(R);
-        R.setVisible(true);
-        R.toFront(); //[poner al frente
-        R.setLocation(jDesktopPane1.getWidth() / 2 - R.getWidth() / 2, jDesktopPane1.getHeight() / 2 - R.getHeight() / 2);
-        //Codigo sacado en facebook para no mover la ventana
-        
-        try {
-        R.setMaximum(true); //OPCIONAL
-        } catch (PropertyVetoException ex) {
-        Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         con = conect.getConnection();
         JOptionPane.showMessageDialog(null, "CONEXION EXITOSA");
@@ -304,13 +338,44 @@ public class Interfaz extends javax.swing.JFrame {
         obj.Desconexion();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        Reportes R = new Reportes();
+        jDesktopPane1.add(R);
+        R.setVisible(true);
+        R.toFront(); //[poner al frente
+        R.setLocation(jDesktopPane1.getWidth() / 2 - R.getWidth() / 2, jDesktopPane1.getHeight() / 2 - R.getHeight() / 2);
+        //Codigo sacado en facebook para no mover la ventana
+        
+        try {
+        R.setMaximum(true); //OPCIONAL
+        } catch (PropertyVetoException ex) {
+        Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         Buscar b = new Buscar();
         jDesktopPane1.add(b);
         b.setVisible(true);
         b.toFront();
         b.setLocation(jDesktopPane1.getWidth() / 2 - b.getWidth() / 2, jDesktopPane1.getHeight() / 2 - b.getHeight() / 2);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        BuscarEdit b = new BuscarEdit();
+        jDesktopPane1.add(b);
+        b.setVisible(true);
+        b.toFront();
+        b.setLocation(jDesktopPane1.getWidth() / 2 - b.getWidth() / 2, jDesktopPane1.getHeight() / 2 - b.getHeight() / 2);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        Borrar bo = new Borrar();
+        jDesktopPane1.add(bo);
+        bo.setVisible(true);
+        bo.toFront();
+        bo.setLocation(jDesktopPane1.getWidth() / 2 - bo.getWidth() / 2, jDesktopPane1.getHeight() / 2 - bo.getHeight() / 2);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -355,15 +420,26 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JLabel txtHora1;
     private javax.swing.JLabel txtMinutos1;
     private javax.swing.JLabel txtSegundos1;

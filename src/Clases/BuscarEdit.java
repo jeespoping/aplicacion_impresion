@@ -1,29 +1,40 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Clases;
 
+
+import static Clases.Buscar.jTextField1;
+import static Clases.Interfaz.jDesktopPane1;
 import com.placeholder.PlaceHolder;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
-public class Buscar extends javax.swing.JInternalFrame {
+/**
+ *
+ * @author Lopez
+ */
+public class BuscarEdit extends javax.swing.JInternalFrame {
     Imprimir impr = new Imprimir();
     Cursor cursor;
     Toolkit t = Toolkit.getDefaultToolkit();
-    public Buscar() {
+    public BuscarEdit() {
         initComponents();
         cursor();
-        this.getContentPane().setBackground(new Color(127, 140, 141));
+        this.getContentPane().setBackground(new Color(41, 128, 185));
         PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el Id");
     }
     
-     public void limpiar(){
+    public void limpiar(){
         jTextField1.setText("");
         PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el Id");
     }
@@ -39,6 +50,7 @@ public class Buscar extends javax.swing.JInternalFrame {
         cursor = t.createCustomCursor(imagen.getImage(), new Point(1,1), "cursor");
         setCursor(cursor);
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -50,14 +62,14 @@ public class Buscar extends javax.swing.JInternalFrame {
         setClosable(true);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jLabel1.setText("Ingrese el Id de la factura");
+        jLabel1.setText("Ingrese el Id de la factura para editar");
 
         jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/busqueda.png"))); // NOI18N
-        jButton1.setText("BUSCAR");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/jalo.png"))); // NOI18N
+        jButton1.setText("EDITAR");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton1MouseEntered(evt);
@@ -83,7 +95,7 @@ public class Buscar extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(0, 202, Short.MAX_VALUE))
+                        .addGap(0, 294, Short.MAX_VALUE))
                     .addComponent(jTextField1))
                 .addContainerGap())
         );
@@ -96,20 +108,11 @@ public class Buscar extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            if(impr.buscarDatos(jTextField1.getText())) impr.Imprimir();
-            limpiar();
-        } catch (SQLException ex) {
-            Logger.getLogger(Buscar.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         punter();
@@ -118,6 +121,31 @@ public class Buscar extends javax.swing.JInternalFrame {
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
         cursor();
     }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            if(impr.buscarDatos(jTextField1.getText())){
+                Edit b = new Edit();
+                b.llenar(jTextField1.getText());
+                Interfaz.jDesktopPane1.add(b);
+                b.setVisible(true);
+                b.toFront();
+                b.setLocation(Interfaz.jDesktopPane1.getWidth() / 2 - b.getWidth() / 2, Interfaz.jDesktopPane1.getHeight() / 2 - b.getHeight() / 2);
+                
+                try {
+                b.setMaximum(true); //OPCIONAL
+                } catch (PropertyVetoException ex) {
+                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                this.dispose();
+            }
+            else{
+                limpiar();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Buscar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
