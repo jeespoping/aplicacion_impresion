@@ -120,7 +120,7 @@ public class Imprimir {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                if(id.equalsIgnoreCase(rs.getString("Id_registro"))){
+                if(id.equalsIgnoreCase(rs.getString("nit"))){
                     this.ID = rs.getString("Id_registro");
                     this.cliente = rs.getString("cliente");
                     this.tel = rs.getString("telefono");
@@ -143,10 +143,10 @@ public class Imprimir {
                 }
             }
             if(flag == false){
-                JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL NIT", "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL ID", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "NO SE HA ENCONTRADO EL NIT", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
         return false;
     }

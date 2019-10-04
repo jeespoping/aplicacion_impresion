@@ -38,6 +38,7 @@ public class Interfaz extends javax.swing.JFrame {
         Calendar cal = Calendar.getInstance();
         String fecha = cal.get(Calendar.DATE) + "/" + (cal.get(Calendar.MARCH) + 1) + "/" + cal.get(Calendar.YEAR);
         this.JLB_Fecha1.setText(fecha);
+        //this.setResizable(false); //quitar el boton de maximizar
     }
 
     public class cronometro implements ActionListener {
@@ -138,6 +139,7 @@ public class Interfaz extends javax.swing.JFrame {
         jMenuBar3.add(jMenu7);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);

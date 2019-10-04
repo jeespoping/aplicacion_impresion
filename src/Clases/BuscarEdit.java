@@ -71,7 +71,7 @@ public class BuscarEdit extends javax.swing.JInternalFrame {
         setClosable(true);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jLabel1.setText("Ingrese el Id de la factura para editar");
+        jLabel1.setText("Ingrese el NIT de la factura para editar");
 
         jTextField1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -109,7 +109,7 @@ public class BuscarEdit extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(0, 294, Short.MAX_VALUE))
+                        .addGap(0, 283, Short.MAX_VALUE))
                     .addComponent(jTextField1))
                 .addContainerGap())
         );

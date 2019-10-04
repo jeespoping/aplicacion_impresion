@@ -34,7 +34,7 @@ public class Borrar extends javax.swing.JInternalFrame {
         initComponents();
         cursor();
         this.getContentPane().setBackground(new Color(192, 57, 43));
-        PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el Id");
+        PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el NIT");
     }
     
     private void capturarEnter(KeyEvent evt){
@@ -55,7 +55,7 @@ public class Borrar extends javax.swing.JInternalFrame {
     
     public void limpiar(){
         jTextField1.setText("");
-        PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el Id");
+        PlaceHolder holder = new PlaceHolder(jTextField1,"Ingrese el NIT");
     }
     
     public void cursor(){
@@ -150,7 +150,7 @@ public class Borrar extends javax.swing.JInternalFrame {
                     Conexion conect = new Conexion();
                     con = conect.getConnection();
                     Statement st = con.createStatement();
-                    String sql = "delete from Registro where Id_registro = ?";
+                    String sql = "delete from Registro where nit = ?";
                     PreparedStatement pst = con.prepareStatement(sql);
                     pst.setInt(1, Integer.parseInt(jTextField1.getText()));
                     int n = pst.executeUpdate();

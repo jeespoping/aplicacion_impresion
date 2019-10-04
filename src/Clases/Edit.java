@@ -61,7 +61,7 @@ public class Edit extends javax.swing.JInternalFrame {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                if(id.equalsIgnoreCase(rs.getString("Id_registro"))){
+                if(id.equalsIgnoreCase(rs.getString("nit"))){
                     jTextField1.setText(rs.getString("cliente"));
                     jTextField2.setText(rs.getString("telefono"));
                     jTextField3.setText(rs.getString("nit"));
@@ -584,7 +584,7 @@ public class Edit extends javax.swing.JInternalFrame {
                 Conexion conect = new Conexion();
                 con = conect.getConnection();
                 Statement st = con.createStatement();
-                String sql = "update Registro set cliente = ?,telefono = ?,nit = ?,direccion = ?,equipo = ?,marca = ?,modelo = ?,serial = ?,accesorios_recibidos = ?,manifestacion_cliente = ?,tecnico_cargo = ?,costo_revision = ?,costo_domicilio = ?,total_pagar = ?,fecha_reparacion = ?,fecha_entrega = ?,manifestacion_tecnico = ? where Id_registro = ?";
+                String sql = "update Registro set cliente = ?,telefono = ?,nit = ?,direccion = ?,equipo = ?,marca = ?,modelo = ?,serial = ?,accesorios_recibidos = ?,manifestacion_cliente = ?,tecnico_cargo = ?,costo_revision = ?,costo_domicilio = ?,total_pagar = ?,fecha_reparacion = ?,fecha_entrega = ?,manifestacion_tecnico = ? where nit = ?";
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, jTextField1.getText());
                 pst.setString(2, jTextField2.getText());
@@ -608,7 +608,7 @@ public class Edit extends javax.swing.JInternalFrame {
                 }
                 pst.setString(15, f.format(fecha1));
                 pst.setString(16, f.format(fecha2));
-                pst.setInt(18, Integer.parseInt(this.id));
+                pst.setString(18, this.id);
                 int n = pst.executeUpdate();
                 if (n > 0)
                 {
