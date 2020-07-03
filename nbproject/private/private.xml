@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/aplicacion_imprecion/src/Clases/Imprimir.java</file>
-            <file>file:/C:/aplicacion_imprecion/src/Clases/Interfaz.java</file>
-            <file>file:/C:/aplicacion_imprecion/src/Clases/Borrar.java</file>
-            <file>file:/C:/aplicacion_imprecion/src/Clases/Edit.java</file>
-            <file>file:/C:/aplicacion_imprecion/src/Clases/Buscar.java</file>
-            <file>file:/C:/aplicacion_imprecion/src/Clases/BuscarEdit.java</file>
+            <file>file:/C:/aplicacion_impresion/src/Clases/Imprimir.java</file>
+            <file>file:/C:/aplicacion_impresion/src/Reporte/GenerarReportes.java</file>
+            <file>file:/C:/aplicacion_impresion/src/Clases/Buscar.java</file>
         </group>
     </open-files>
 </project-private>

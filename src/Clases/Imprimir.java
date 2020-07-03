@@ -25,9 +25,8 @@ public class Imprimir {
     
     public void Imprimir() throws SQLException{
         
-        
         try {
-            String master = System.getProperty("user.dir")+"/src/Reporte/Usuario.Jasper";
+            String master = System.getProperty("user.dir")+"/src/Reporte/Usuario.jasper";
             HashMap parametros = new HashMap();
        
             parametros.put("ID",ID);
